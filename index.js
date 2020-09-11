@@ -209,12 +209,14 @@ const first = artists[0];
 console.log(artists[0].name)
     /*(2) Bio of the third artist (2nd index) in the array */
     //this//
-console.log(artists[2].bio);
-
+console.log('line 212: ', artists[2].bio);
+let person = artists[2].bio
+console.log(person)
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
-
-artists[9] = "Vincent Van Gogh"
+console.log(artists[8])
+console.log(artists[9])
+'Line 217: ', artists[9] = "Vincent Van Gogh"
 
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
  *     (1) artists array
@@ -234,15 +236,15 @@ console.log(getArtistByIndex(artists, 0));
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(arr) {
-    let newArr = arr.filter(function(artist) {
-        let yearsArr = artist.years.split(' ');
-        let deathYear = yearsArr[2];
-        return (Number(deathYear) >= 1900 && Number(deathYear) < 2000);
-    })
-    return newArr.map(artist => artist.name);
-}
-console.log(get20s(artists));
+// function get20s(arr) {
+//     let newArr = arr.filter(function(artist) {
+//         let yearsArr = artist.years.split(' ');
+//         let deathYear = yearsArr[2];
+//         return (Number(deathYear) >= 1900 && Number(deathYear) < 2000);
+//     })
+//     return newArr.map(artist => artist.name);
+// }
+// console.log(get20s(artists));
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -259,7 +261,7 @@ function removeArtist(arr, index) {
     arr.splice(index, 1);
     return (arr.length);
 }
-removeArtist(artists, 1);
+console.log(removeArtist(artists, 1));
 console.log(artists)
 
 /**
@@ -276,10 +278,12 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 At the end, this function should return the new array with information added"*/
 
 function addArtist(name, years, genre, nationality, bio) {
-
-    return { name, years, genre, nationality, bio };
+    let artist = { name, years, genre, nationality, bio };
+    artists.push(artist)
+    return artist;
 }
-console.log(addArtist('Ramsha', 1997 - 2020, 'Techno', 'American', 'Lives in Chicago'));
+addArtist('Ramsha', '1997 - 2020', 'Techno', 'American', 'Lives in Chicago');
+console.log(artists[19])
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
     (1) artists array 
